@@ -1,24 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Card from "./Card";
+import Data from "./Data";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <div className='cards'>
-      <div className='card'>
-        <img src='' alt='myPic' className='card_img'></img>
-        <div className='card_info'>
-          <span className='card_category'></span>
-          <h3 className='card_title'></h3>
-          <a href='' target="_blank">
-            <button>Watc Now</button>
-          </a>
-        </div>
-      </div>
-    </div>
+    <h1 className="heading">Happy Moments</h1>
+    {/* functional programming --> passing a function inside of a function and so on */}
+    {Data.map((val) => {
+      return (
+        <Card
+          imgsrc={val.imgsrc}
+          title={val.title}
+          name={val.name}
+          link={val.link}
+        ></Card>
+      );
+    })}
   </>
 );
-
-
